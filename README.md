@@ -204,4 +204,4 @@ MIT – feel free to reuse this architecture for other event-driven systems!!
 
 ---
 
-Thank you SavannahTech for this great oppotunity to build this project
+Thank you SavannahTech for this great oppotunity to build this project.
