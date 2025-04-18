@@ -10,7 +10,7 @@ A real-time fullstack web app that validates user-submitted strings against a co
 1. A user enters a text string in the frontend.
 2. The backend accepts the request and queues it via Kafka.
 3. A background service asynchronously validates the string using a regex pattern from environment config.
-4. The result (`Valid`, `Invalid`) is pushed to the frontend in real-time via WebSocket.
+4. The result (`Validating`,`Valid`, `Invalid`) is pushed to the frontend in real-time via WebSocket.
 5. A persistent history of submissions is shown on the UI.
 
 ---
