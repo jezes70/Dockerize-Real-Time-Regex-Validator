@@ -48,7 +48,7 @@ real-time-regex-validator/
 | Backend   | NestJS (Node.js) |
 | Messaging | Kafka |
 | Pub/Sub   | Redis |
-| Database  | MongoDB / PostgreSQL |
+| Database  | MongoDB |
 | Orchestration | Docker Compose |
 
 ---
