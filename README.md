@@ -199,7 +199,7 @@ docker exec -it nestjs_backend npm run test
 
 ## 📄 License
 
-MIT – feel free to reuse this architecture for other event-driven systems!
+MIT – feel free to reuse this architecture for other event-driven systems!!
 ```
 
 ---
