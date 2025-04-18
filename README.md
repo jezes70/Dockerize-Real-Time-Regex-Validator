@@ -1,7 +1,6 @@
-```md
 # 🧪 Real-Time Regex Validator (Fullstack App)
 
-A real-time fullstack web app that validates user-submitted strings against a configurable regular expression. Designed to demonstrate scalable, event-driven architecture using **NestJS**, **React**, **Kafka**, **Redis**, and **MongoDB** — fully containerized with Docker Compose.
+A real-time fullstack web app that validates user-submitted strings against a configurable regular expression. Designed to demonstrate scalable, event-driven architecture using **NestJS**, **React**, **Kafka**, **Redis**, and **MongoDB/PostgreSQL** — fully containerized with Docker Compose.
 
 ---
 
@@ -37,7 +36,6 @@ real-time-regex-validator/
 │   │   ├── App.css
 │   │   └── ...
 │   └── Dockerfile
-
 ```
 
 ---
@@ -50,7 +48,7 @@ real-time-regex-validator/
 | Backend   | NestJS (Node.js) |
 | Messaging | Kafka |
 | Pub/Sub   | Redis |
-| Database  | MongoDB |
+| Database  | MongoDB / PostgreSQL |
 | Orchestration | Docker Compose |
 
 ---
@@ -72,7 +70,7 @@ real-time-regex-validator/
    |                            \         /   | Redis Channel |
    |                             \       /    +---------------+
    |                              \     /
-   |                             +---------+         MongoDB
+   |                             +---------+     MongoDB / PostgreSQL
    +-----------------------------+ Processor +--------------------> Store Results
                                  +---------+
 ```
@@ -112,6 +110,7 @@ Frontend will be available at:
 In separate terminals:
 
 #### 🟢 Backend
+
 ```bash
 cd titans-backend
 npm install
@@ -120,6 +119,7 @@ npm run start:dev
 ```
 
 #### 🟠 Frontend
+
 ```bash
 cd titans-frontend
 npm install
@@ -135,6 +135,7 @@ Then visit: `http://localhost:5173`
 ```env
 REGEX_PATTERN=^[a-zA-Z0-9]+$
 MONGODB_URI=mongodb://root:root@mongo:27017/regex-validator?authSource=admin
+POSTGRES_URI=postgresql://postgres:postgres@postgres:5432/regex-validator
 REDIS_HOST=redis
 KAFKA_BROKER=kafka:9093
 PROCESS_DELAY_MS=2000
@@ -144,7 +145,7 @@ PROCESS_DELAY_MS=2000
 
 ## 📦 Component Responsibilities
 
-- `JobsService`: handles job creation, Mongo persistence, Kafka publishing.
+- `JobsService`: handles job creation, DB persistence (Mongo/Postgres), Kafka publishing.
 - `JobsProcessor`: listens to Kafka, processes validation, updates status.
 - `JobsGateway`: emits WebSocket events to frontend.
 - `RedisService`: handles publish of job status over Redis pub/sub.
@@ -158,7 +159,7 @@ PROCESS_DELAY_MS=2000
 - Kafka ensures job durability (even if backend restarts).
 - Redis decouples communication between services.
 - Docker Compose can auto-restart failed containers.
-- MongoDB ensures persistence even under process failures.
+- MongoDB or PostgreSQL ensures persistence even under process failures.
 - Input validation and error handling via NestJS decorators.
 
 ---
@@ -172,6 +173,7 @@ PROCESS_DELAY_MS=2000
 | Kafka    | Amazon MSK |
 | Redis    | Amazon ElastiCache |
 | MongoDB  | MongoDB Atlas or self-hosted on EC2 |
+| PostgreSQL | Amazon RDS |
 | Backend  | ECS Fargate or EKS |
 | Frontend | S3 + CloudFront or ECS |
 | Secrets  | AWS Secrets Manager or SSM Parameter Store |
@@ -201,8 +203,7 @@ docker exec -it nestjs_backend npm run test
 ## 📄 License
 
 MIT – feel free to reuse this architecture for other event-driven systems!!
-```
 
 ---
 
-Thank you SavannahTech for this great oppotunity to build this project.
+Thank you SavannahTech for this great opportunity to build this project.
