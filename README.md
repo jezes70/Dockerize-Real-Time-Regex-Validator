@@ -70,7 +70,7 @@ real-time-regex-validator/
    |                            \         /   | Redis Channel |
    |                             \       /    +---------------+
    |                              \     /
-   |                             +---------+     MongoDB / PostgreSQL
+   |                             +---------+     MongoDB 
    +-----------------------------+ Processor +--------------------> Store Results
                                  +---------+
 ```
