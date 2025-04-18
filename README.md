@@ -173,7 +173,6 @@ PROCESS_DELAY_MS=2000
 | Kafka    | Amazon MSK |
 | Redis    | Amazon ElastiCache |
 | MongoDB  | MongoDB Atlas or self-hosted on EC2 |
-| PostgreSQL | Amazon RDS |
 | Backend  | ECS Fargate or EKS |
 | Frontend | S3 + CloudFront or ECS |
 | Secrets  | AWS Secrets Manager or SSM Parameter Store |
