@@ -61,7 +61,7 @@ real-time-regex-validator/
 ```
 +-----------+        HTTP        +----------+     Kafka     +-------------+
 |  Frontend |  +---------------> |  Backend | +-----------> | Kafka Topic |
-| (React)   |                   | (NestJS) |               | "regex-jobs"|
+|  (React)  |                   | (NestJS) |               | "regex-jobs"|
 +-----------+                  /+----------+\              +-------------+
    ↑         WebSocket        /     ↑       \   WebSocket Broadcast
    |  <----------------------+  Job Gateway  +------------> Clients
