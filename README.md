@@ -135,7 +135,6 @@ Then visit: `http://localhost:5173`
 ```env
 REGEX_PATTERN=^[a-zA-Z0-9]+$
 MONGODB_URI=mongodb://root:root@mongo:27017/regex-validator?authSource=admin
-POSTGRES_URI=postgresql://postgres:postgres@postgres:5432/regex-validator
 REDIS_HOST=redis
 KAFKA_BROKER=kafka:9093
 PROCESS_DELAY_MS=2000
