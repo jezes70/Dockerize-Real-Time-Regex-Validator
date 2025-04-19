@@ -144,7 +144,7 @@ PROCESS_DELAY_MS=2000
 
 ## 📦 Component Responsibilities
 
-- `JobsService`: handles job creation, DB persistence (Mongo/Postgres), Kafka publishing.
+- `JobsService`: handles job creation, DB persistence (Mongo), Kafka publishing.
 - `JobsProcessor`: listens to Kafka, processes validation, updates status.
 - `JobsGateway`: emits WebSocket events to frontend.
 - `RedisService`: handles publish of job status over Redis pub/sub.
@@ -158,7 +158,7 @@ PROCESS_DELAY_MS=2000
 - Kafka ensures job durability (even if backend restarts).
 - Redis decouples communication between services.
 - Docker Compose can auto-restart failed containers.
-- MongoDB or PostgreSQL ensures persistence even under process failures.
+- MongoDB ensures persistence even under process failures.
 - Input validation and error handling via NestJS decorators.
 
 ---
